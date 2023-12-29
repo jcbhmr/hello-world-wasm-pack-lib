@@ -2,6 +2,21 @@
 
 🦀 Greeter demo using wasm-pack to create an npm package
 
+<table align=center><td>
+
+```js
+import { greet } from "hello-world-wasm-pack-lib"
+
+greet("Alan Turing")
+//=> 'Hello Alan Turing!'
+```
+
+</table>
+
+<p align=center>
+  <a href="https://tsdocs.dev/docs/hello-world-wasm-pack-lib">Docs</a>
+</p>
+
 ## Installation
 
 ```sh
