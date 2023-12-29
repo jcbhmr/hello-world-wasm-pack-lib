@@ -1,23 +1,22 @@
 diff --git a/hello_world_wasm_pack_lib.d.ts b/hello_world_wasm_pack_lib.d.ts
-index 49d90f9..1a567a1 100644
+index 49d90f9..cd14ec4 100644
 --- a/hello_world_wasm_pack_lib.d.ts
 +++ b/hello_world_wasm_pack_lib.d.ts
-@@ -7,36 +7,3 @@ export function start(): void;
- * @param {string} name
+@@ -8,9 +8,7 @@ export function start(): void;
  */
  export function greet(name: string): void;
--
+ 
 -export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 -
 -export interface InitOutput {
--  readonly memory: WebAssembly.Memory;
--  readonly start: () => void;
--  readonly greet: (a: number, b: number) => void;
--  readonly __wbindgen_malloc: (a: number, b: number) => number;
--  readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
--  readonly __wbindgen_free: (a: number, b: number, c: number) => void;
--  readonly __wbindgen_start: () => void;
--}
++interface InitOutput {
+   readonly memory: WebAssembly.Memory;
+   readonly start: () => void;
+   readonly greet: (a: number, b: number) => void;
+@@ -19,24 +17,3 @@ export interface InitOutput {
+   readonly __wbindgen_free: (a: number, b: number, c: number) => void;
+   readonly __wbindgen_start: () => void;
+ }
 -
 -export type SyncInitInput = BufferSource | WebAssembly.Module;
 -/**
