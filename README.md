@@ -26,6 +26,12 @@ console.log(calc.value);
   | <a href="https://www.npmjs.com/package/hello-world-wasm-pack-lib">npm package</a>
 </p>
 
+🦀 Written in Rust! \
+🟪 Compiled to WebAssembly \
+🟨 Exposed to JavaScript \
+🎉 Great way to see what wasm-pack can do \
+👩‍⚖️ [0BSD licensed] template
+
 ## Installation
 
 ![npm](https://img.shields.io/static/v1?style=for-the-badge&message=npm&color=CB3837&logo=npm&logoColor=FFFFFF&label=)
