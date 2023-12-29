@@ -30,7 +30,7 @@ console.log(calc.value);
 🟪 Compiled to WebAssembly \
 🟨 Exposed to JavaScript \
 🎉 Great way to see what wasm-pack can do \
-👩‍⚖️ [0BSD licensed] template
+👩‍⚖️ [0BSD licensed](./LICENSE) template
 
 ## Installation
 
@@ -121,5 +121,4 @@ a `.patch` will be generated against the `a/` folder and saved to `pkg.patch`.
 [Deno]: https://deno.com/
 [jsDelivr]: https://www.jsdelivr.com/
 [esm.sh]: https://esm.sh/
-[0BSD licensed]: https://github.com/jcbhmr/hello-world-rust-wasm-component-lib.js/blob/main/LICENSE
 <!-- prettier-ignore-end -->
