@@ -1,0 +1,47 @@
+diff --git a/hello_world_wasm_pack_lib.js b/hello_world_wasm_pack_lib.js
+index 7c4fa7d..b24d013 100644
+--- a/hello_world_wasm_pack_lib.js
++++ b/hello_world_wasm_pack_lib.js
+@@ -1,3 +1,5 @@
++import { fetch } from 'fetch-with-file-support';
++
+ let wasm;
+
+ const cachedTextDecoder = (typeof TextDecoder !== 'undefined' ? new TextDecoder('utf-8', { ignoreBOM: true, fatal: true }) : { decode: () => { throw Error('TextDecoder not available') } } );
+@@ -152,8 +154,10 @@ async function __wbg_load(module, imports) {
+
+             } catch (e) {
+                 if (module.headers.get('Content-Type') != 'application/wasm') {
+-                    console.warn("`WebAssembly.instantiateStreaming` failed because your server does not serve wasm with `application/wasm` MIME type. Falling back to `WebAssembly.instantiate` which is slower. Original error:\n", e);
+-
++                    if (/^https?:/.test(module.url)) {
++                        console.warn("`WebAssembly.instantiateStreaming` failed because your server does not serve wasm with `application/wasm` MIME type. Falling back to `WebAssembly.instantiate` which is slower. Original error:\n", e);
++                    }
++                    // Otherwise assume its 'file:' or something. Continues below try/catch.
+                 } else {
+                     throw e;
+                 }
+@@ -266,5 +270,4 @@ async function __wbg_init(input) {
+     return __wbg_finalize_init(instance, module);
+ }
+
+-export { initSync }
+-export default __wbg_init;
++await __wbg_init();
+diff --git a/package.json b/package.json
+index 97c5f6a..a747734 100644
+--- a/package.json
++++ b/package.json
+@@ -14,5 +14,9 @@
+   "types": "hello_world_wasm_pack_lib.d.ts",
+   "sideEffects": [
+     "./snippets/*"
+-  ]
+-}
+\ No newline at end of file
++  ],
++  "type": "module",
++  "dependencies": {
++    "fetch-with-file-support": "1.2.0"
++  }
++}
