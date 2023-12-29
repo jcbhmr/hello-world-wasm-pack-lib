@@ -50,3 +50,19 @@ impl Calculator {
         self.value = n;
     }
 }
+
+#[wasm_bindgen(inspectable)]
+pub struct Report {
+    pub dog_count: u32,
+    pub bouncy_castles: u32,
+    pub fun_percent: f64,
+}
+
+#[wasm_bindgen]
+pub fn get_report() -> Report {
+    return Report {
+        dog_count: 5,
+        bouncy_castles: 3,
+        fun_percent: 76.8,
+    };
+}

@@ -1,8 +1,11 @@
 [package]
 name = "hello-world-wasm-pack-lib"
 description = "🦀 Greeter demo using wasm-pack to create an npm package"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["Jacob Hummer <jcbhmr@outlook.com>"]
+license = "0BSD"
+repository = "https://github.com/jcbhmr/hello-world-wasm-pack-lib.git"
+homepage = "https://tsdocs.dev/docs/hello-world-wasm-pack-lib"
 edition = "2021"
 publish = false
 
