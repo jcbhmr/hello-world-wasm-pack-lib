@@ -26,4 +26,9 @@ build()(
   npm install --omit=dev
 )
 
+publish()(
+  cd pkg
+  npm publish "$@"
+)
+
 cd "$(dirname "${BASH_SOURCE[0]}")"; c=$1; shift; "$c" "$@"
