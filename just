@@ -31,4 +31,4 @@ publish()(
   npm publish "$@"
 )
 
-cd "$(dirname "${BASH_SOURCE[0]}")"; c=$1; shift; "$c" "$@"
+cd "$(dirname "${BASH_SOURCE[0]}")"; "$@"
